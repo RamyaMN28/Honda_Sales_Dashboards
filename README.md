@@ -93,30 +93,30 @@ PowerBI
 Model Ratings:
 
 Average of Every Customer Ratings: Calculated using 
-```http
+```bash
  AVG COMFORT RATING = CONCATENATE(FORMAT(AVERAGE(honda_data[Comfort_Rating]),"0.00"),"/5").
  ```
- ```http
+ ```bash
 AVG Exterior_Styling_Rating = CONCATENATE(FORMAT(AVERAGE(honda_data[Exterior_Styling_Rating]),"0.00"),"/5")
  ```
-```http
+```bash
 AVG Interior_Design_Rating = CONCATENATE(FORMAT(AVERAGE(honda_data[Interior_Design_Rating]),"0.00"),"/5")
  ```
-```http
+```bash
 AVG PERFORMANCE = CONCATENATE(FORMAT(AVERAGE(honda_data[Performance_Rating]),"0.00"),"/5")
  ```
-```http
+```bash
 AVG Value_For_Money_Rating = CONCATENATE(FORMAT(AVERAGE(honda_data[Value_For_Money_Rating]),"0.00"),"/5")
  ```
-```http
+```bash
 AVG RATING = CONCATENATE(FORMAT(AVERAGE(honda_data[Consumer_Rating]),"0.00"),"/5")
  ```
 Average Price: 
-```http
+```bash
 AVG PRICE = AVERAGE(honda_data[Price])
  ```
 Normalized Price:
-```http
+```bash
 Normalized Price = 
 VAR Price = honda_data[AVG PRICE]
 VAR MinPrice = MIN(honda_data[Price])
@@ -124,23 +124,24 @@ VAR MaxPrice = MAX(honda_data[Price])
 RETURN DIVIDE(Price - MinPrice, MaxPrice - MinPrice)
 Total Vehicles: Displays the total number of vehicles sold.
 ```
-```http
+```bash
 TOTAL VEHICLES = DISTINCTCOUNT(honda_data[VIN])
 ```
 Fuel Type and Condition: Shows the fuel type  of the vehicles.
 
-```http
+```bash
 BEV VEHI = CALCULATE([TOTAL VEHICLES],honda_data[Fuel_Type] = "Gasoline")
 ```
-```http
+```bash
 % OF BEV = [BEV VEHI] / [TOTAL VEHICLES] 
 ```
-```http
+```bash
 HBEV VEHI = CALCULATE([TOTAL VEHICLES],honda_data[Fuel_Type] = "Hybrid")
 ```
-```http
+```bash
 % OF HBEV = [HBEV VEHI] / [TOTAL VEHICLES] 
 ```
+
 ## Insights and Features:
 ### 1. Customer Trends Dashboard
 Name: HONDA CUSTOMER VOICE DASHBOARD
